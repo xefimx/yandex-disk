@@ -249,6 +249,7 @@ YandexDisk.prototype = {
             port: 443,
             method: method.toUpperCase(),
             path: encodeURI(this._normalizePath(path)),
+            agent: https.Agent({keepAlive:true}),
             headers: {
                 'Host': 'webdav.yandex.ru',
                 'Accept': '*/*',
